@@ -1,0 +1,78 @@
+$sceen_sizsing:(
+    'x-smoll':0,
+    'smoll':570px,
+    'medim':768px,
+    'medim-max':768px,
+    'large':992px,
+    'large-max':992px,
+    'xl':1200px
+);
+@mixin x-smoll {
+   @media (min-width:map-get($sceen_sizsing,"x-smoll")) {
+    @content;
+   } 
+}
+@mixin smoll {
+   @media (min-width:map-get($sceen_sizsing,"smoll")) {
+    @content;
+   } 
+}
+@mixin medim {
+   @media (min-width:map-get($sceen_sizsing,'medim')) {
+    @content;
+   } 
+}
+@mixin medim-max {
+   @media (max-width:map-get($sceen_sizsing,'medim-max')) {
+    @content;
+   } 
+}
+@mixin large {
+   @media (min-width:map-get($sceen_sizsing,'large')) {
+    @content;
+   } 
+}
+@mixin xl {
+    @media (min-width:map-get($sceen_sizsing,'xl')) {
+    @content;
+   } 
+};
+@mixin large-max {
+    @media (max-width:map-get($sceen_sizsing,'large-max')){
+        @content;
+    }
+}
+@mixin flex($justify,$align:center,$direction:row,$wrap:wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+@mixin  grid ($coloms,$gap:0) {
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat($coloms,1fr);
+}
+@mixin transition {
+    transition: all 0.5s ease-in-out;
+}
+@mixin circle  {
+    width: 160px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+@mixin radius($width,$hieght,$circle) {
+    width: $width;
+    height: $hieght;
+    border-radius: $circle;
+}
+
+
+
+
+
+
+
+
